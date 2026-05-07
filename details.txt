@@ -1,0 +1,34 @@
+# ===================================================================
+# SECRETS MASKING DEMONSTRATION FILE
+# ===================================================================
+# This file shows the difference between exposed (unmasked) secrets 
+# and how they appear when masked by a CI/CD system.
+
+# -------------------------------------------------------------------
+# CATEGORY 1: UNMASKED SECRETS (SECURITY RISK)
+# -------------------------------------------------------------------
+# These are "naked" secrets. If committed, scanners will catch them.
+
+DB_CONNECTION="Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=MySecretPassword123!;"
+AWS_ACCESS_KEY="AKIAEXAMPLE123456789"
+STRIPE_KEY="sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+
+
+# -------------------------------------------------------------------
+# CATEGORY 2: MASKED SECRETS (SECURE LOG VIEW)
+# -------------------------------------------------------------------
+# This is how secrets appear in GitHub/ADO logs when properly configured.
+
+CLOUD_API_TOKEN="***"
+SERVICE_ACCOUNT_KEY="***"
+PRODUCTION_SECRET_KEY="***"
+
+
+# -------------------------------------------------------------------
+# CATEGORY 3: DUMMY/PLACEHOLDER CREDENTIALS
+# -------------------------------------------------------------------
+# Often used for local development or documentation.
+
+USER_ID="user_99"
+ENVIRONMENT="development"
+DEBUG_MODE="true"
